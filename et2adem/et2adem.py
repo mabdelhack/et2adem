@@ -1,8 +1,9 @@
 from tqdm import tqdm
-from time import sleep
 from playsound import playsound
 import threading
+import os
 
+_ROOT = os.path.abspath(os.path.dirname(__file__))
 class et2adem(tqdm):
     def __init__(self, loop_data, sound=True):
         self.sound = sound
@@ -21,7 +22,8 @@ class et2adem(tqdm):
 
     @staticmethod
     def play_song(stop):
+        path = 'et2dm.wav'
         while True:
-            playsound('et2dm.wav')
+            playsound(os.path.join(_ROOT, 'data', path))
             if stop():
                 break

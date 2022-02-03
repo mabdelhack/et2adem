@@ -1,1 +1,2 @@
-from et2adem import et2adem
+from .et2adem import et2adem
+
